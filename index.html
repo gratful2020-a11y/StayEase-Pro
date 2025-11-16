@@ -41,13 +41,31 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
             font-weight: bold;
             color: white;
         }
 
-        .logo span {
+        .logo-text span {
             color: #f59e0b;
+            font-weight: 800;
         }
 
         .nav-links {
@@ -388,6 +406,24 @@
             .section-title {
                 font-size: 2.2rem;
             }
+
+            .logo-text {
+                display: none; /* Hide text on mobile, show only logo */
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 35px;
+            }
+            
+            .nav-container {
+                padding: 0 1rem;
+            }
         }
     </style>
 </head>
@@ -395,7 +431,10 @@
     <!-- Header -->
     <header>
         <nav class="nav-container">
-            <div class="logo">Stay<span>Ease</span> Pro</div>
+            <a href="#home" class="logo">
+                <img src="logo.png" alt="StayEase Pro - Professional Airbnb Management" class="logo-img">
+                <span class="logo-text">Stay<span>Ease</span> Pro</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -535,7 +574,7 @@
             </div>
             <div class="footer-section">
                 <h3>Contact Info</h3>
-                <p>📱 (+324) 6948-0910</p>
+                <p>📱 (555) 123-4567</p>
                 <p>✉️ hello@stayeasepro.com</p>
                 <p>📍 Serving Major Metropolitan Areas</p>
             </div>
