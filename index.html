@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Airbnb Facilitation & Cleaning Services</title>
+    <title>StayEase Pro | Professional Airbnb Management & Cleaning Services</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -17,18 +16,19 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
+            background: #f8fafc;
         }
 
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, #FF5A5F 0%, #FF385C 100%);
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(37, 99, 235, 0.2);
         }
 
         .nav-container {
@@ -43,6 +43,11 @@
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
+            color: white;
+        }
+
+        .logo span {
+            color: #f59e0b;
         }
 
         .nav-links {
@@ -55,17 +60,20 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.3s;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(30, 64, 175, 0.8), rgba(37, 99, 235, 0.8)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -79,76 +87,107 @@
 
         .hero-content h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
             animation: fadeInUp 1s ease 0.3s both;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-button {
             display: inline-block;
-            background: #FF385C;
+            background: #f59e0b;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
-            transition: transform 0.3s, background 0.3s;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
             animation: fadeInUp 1s ease 0.6s both;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            background: #FF5A5F;
+            background: #eab308;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
         }
 
         /* Services Section */
         .services {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: #333;
+            margin-bottom: 4rem;
+            font-size: 2.8rem;
+            color: #1e293b;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #10b981;
+            margin: 1rem auto;
+            border-radius: 2px;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
 
         .service-icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #1e40af;
             margin-bottom: 1rem;
-            color: #FF385C;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.8;
         }
 
         /* About Section */
         .about {
-            background: #f8f9fa;
-            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 6rem 2rem;
         }
 
         .about-content {
@@ -156,20 +195,77 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 5rem;
             align-items: center;
+        }
+
+        .about-text h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .features-list li {
+            padding: 0.8rem 0;
+            color: #475569;
+            font-size: 1.1rem;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #1e40af;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: #f59e0b;
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             max-width: 800px;
             margin: 0 auto;
         }
 
         .contact-form {
             display: grid;
-            gap: 1rem;
+            gap: 1.5rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .form-group {
@@ -178,48 +274,83 @@
         }
 
         .form-group label {
-            margin-bottom: 0.5rem;
-            font-weight: bold;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #374151;
         }
 
         .form-group input,
         .form-group textarea,
         .form-group select {
-            padding: 0.8rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
             font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: #FF385C;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .submit-btn {
-            background: #FF385C;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
 
         .submit-btn:hover {
-            background: #FF5A5F;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #1e293b;
             color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #f59e0b;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #cbd5e1;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #f59e0b;
+        }
+
+        .footer-bottom {
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #94a3b8;
         }
 
         /* Animations */
@@ -247,10 +378,15 @@
             .about-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 3rem;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -259,7 +395,7 @@
     <!-- Header -->
     <header>
         <nav class="nav-container">
-            <div class="logo">AirbnbPro Services</div>
+            <div class="logo">Stay<span>Ease</span> Pro</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -272,30 +408,52 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Maximize Your Airbnb Success</h1>
-            <p>Professional rental facilitation, management, and cleaning services to boost your income and reduce stress</p>
-            <a href="#contact" class="cta-button">Get Started Today</a>
+            <h1>Stress-Free Airbnb Management</h1>
+            <p>Professional hosting solutions that maximize your rental income while minimizing your workload. Let us handle the details while you enjoy the returns.</p>
+            <a href="#contact" class="cta-button">Start Earning More Today</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title">Our Premium Services</h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🏠</div>
-                <h3>Airbnb Management</h3>
-                <p>Complete listing optimization, guest communication, and booking management to maximize your occupancy rates and revenue.</p>
+                <h3>Complete Airbnb Management</h3>
+                <p>From listing optimization and pricing strategy to guest communication and review management. We handle everything to keep your calendar full and your ratings high.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔑</div>
                 <h3>Rental Facilitation</h3>
-                <p>We connect property owners with reliable tenants and handle all the paperwork, screening, and coordination.</p>
+                <p>We connect you with qualified tenants, handle all screening processes, manage contracts, and ensure smooth transitions between bookings.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">✨</div>
-                <h3>Professional Cleaning</h3>
-                <p>Turnkey cleaning services between guest stays, ensuring your property always makes a perfect first impression.</p>
+                <h3>Professional Cleaning Services</h3>
+                <p>Spotless turnkey cleaning between every guest stay. We maintain hotel-quality standards so your property always makes the perfect first impression.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>40%</h3>
+                <p>Higher Average Revenue</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Guest Support</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.9★</h3>
+                <p>Average Host Rating</p>
+            </div>
+            <div class="stat-item">
+                <h3>2H</h3>
+                <p>Average Cleaning Turnaround</p>
             </div>
         </div>
     </section>
@@ -303,55 +461,95 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="about-content">
-            <div>
-                <h2 class="section-title">Why Choose Us?</h2>
-                <p>With years of experience in the short-term rental industry, we understand what it takes to make your Airbnb property successful. Our comprehensive services handle everything from listing optimization to guest communication and professional cleaning.</p>
-                <br>
-                <p>We're committed to maximizing your rental income while minimizing your workload. Let us handle the details while you enjoy the benefits of property ownership without the stress.</p>
+            <div class="about-text">
+                <h2>Why Choose StayEase Pro?</h2>
+                <p>With over 5 years of experience in short-term rental management, we've perfected the art of maximizing property income while eliminating host stress. Our team of dedicated professionals understands the unique challenges of Airbnb hosting.</p>
+                <p>We combine data-driven pricing strategies with personalized service to ensure your property performs at its peak potential. From dynamic pricing to premium cleaning standards, we handle every detail with precision and care.</p>
+                <ul class="features-list">
+                    <li>Professional photography & listing optimization</li>
+                    <li>Dynamic pricing based on market demand</li>
+                    <li>24/7 guest communication & support</li>
+                    <li>Premium cleaning & restocking services</li>
+                    <li>Regular performance reports & insights</li>
+                    <li>Dedicated account manager</li>
+                </ul>
             </div>
             <div>
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Professional cleaning service" style="width: 100%; border-radius: 10px;">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="StayEase Pro team managing properties" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Ready to Get Started?</h2>
         <form class="contact-form" id="contactForm">
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
             </div>
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
             </div>
             <div class="form-group">
-                <label for="service">Service Interested In</label>
-                <select id="service" name="service">
+                <label for="property">Property Type</label>
+                <select id="property" name="property">
+                    <option value="">Select property type</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="house">House</option>
+                    <option value="condo">Condo</option>
+                    <option value="vacation-home">Vacation Home</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="service">Service Interested In *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service</option>
                     <option value="management">Airbnb Management</option>
                     <option value="facilitation">Rental Facilitation</option>
                     <option value="cleaning">Cleaning Services</option>
                     <option value="all">All Services</option>
+                    <option value="consultation">Free Consultation</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Tell Us About Your Property *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Please describe your property and any specific needs you have..."></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="submit-btn">Get Your Free Property Assessment</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 AirbnbPro Services. All rights reserved.</p>
-        <p>Professional Airbnb Facilitation & Cleaning Services</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>StayEase Pro</h3>
+                <p>Professional Airbnb management and cleaning services designed to maximize your rental income and minimize host stress.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📱 (+324) 6948-0910</p>
+                <p>✉️ hello@stayeasepro.com</p>
+                <p>📍 Serving Major Metropolitan Areas</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#services">Services</a></p>
+                <p><a href="#about">About</a></p>
+                <p><a href="#contact">Contact</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 StayEase Pro. All rights reserved. | Professional Airbnb Facilitation & Cleaning Services</p>
+        </div>
     </footer>
 
     <script>
@@ -373,11 +571,12 @@
             const formData = new FormData(this);
             const name = formData.get('name');
             const email = formData.get('email');
+            const service = formData.get('service');
             
             // Simple validation
-            if (name && email) {
+            if (name && email && service) {
                 // In a real application, you would send this data to a server
-                alert(`Thank you, ${name}! We've received your message and will contact you at ${email} shortly.`);
+                alert(`Thank you, ${name}! We've received your inquiry about ${service} services. We'll contact you at ${email} within 24 hours for your free property assessment.`);
                 this.reset();
             } else {
                 alert('Please fill in all required fields.');
@@ -388,10 +587,20 @@
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = '#FF385C';
+                header.style.background = '#1e40af';
+                header.style.boxShadow = '0 2px 15px rgba(30, 64, 175, 0.3)';
             } else {
-                header.style.background = 'linear-gradient(135deg, #FF5A5F 0%, #FF385C 100%)';
+                header.style.background = 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)';
+                header.style.boxShadow = '0 2px 15px rgba(37, 99, 235, 0.2)';
             }
+        });
+
+        // Add loading animation to service cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
         });
     </script>
 </body>
